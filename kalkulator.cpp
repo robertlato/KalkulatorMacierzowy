@@ -34,7 +34,7 @@ int main()
     switch (operacja)
     {
         case 1:     //dodawanie
-            cout << "przypadek 1\n";
+            wczytaj_dane(operacja);
             break;
         case 2:     //odejmowanie
             cout << "przypadek 2\n";
@@ -65,13 +65,13 @@ void wczytaj_dane(int operacja)
     {
         cout << "Rozmiar 1 matrycy: ";
         cin >> wiersz_1 >> kolumna_1;
-        cout << "\nRozmiar 2 matrycy: ";
+        cout << "Rozmiar 2 matrycy: ";
         cin >> wiersz_2 >> kolumna_2;
         // w przypadku dodawania i odejmowania
         if (operacja == 1 || operacja == 2)
         {
             if (wiersz_1 != wiersz_2 || kolumna_1 != kolumna_2)
-            cout << "Operacja niewykonalna\n";
+            cout << "\nOperacja niewykonalna\n";
             else
             {
                 // tworze matryce 1
@@ -87,14 +87,14 @@ void wczytaj_dane(int operacja)
                     matryca_2[i] = new int[kolumna_2];
 
                 // wczytuje 1 matryce
-                cout << "Podaj 1 matryce:\n";
+                cout << "\nPodaj 1 matryce:\n";
                 for (int i = 0; i < wiersz_1; i++)
                 {
                     for (int j = 0; j < kolumna_1; j++)
                     cin >> matryca_1[i][j];
                 }
                 // wczytuje 2 matryce
-                cout << "Podaj 2 matryce:\n";
+                cout << "\nPodaj 2 matryce:\n";
                 for (int i = 0; i < wiersz_2; i++)
                 {
                     for (int j = 0; j < kolumna_2; j++)
