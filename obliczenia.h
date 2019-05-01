@@ -1,0 +1,1 @@
+void dodaj(int **matryca_1, int **matryca_2);

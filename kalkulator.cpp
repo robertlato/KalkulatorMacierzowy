@@ -71,10 +71,16 @@ void wczytaj_dane(int operacja)
         {
             if (wiersz_1 != wiersz_2 || kolumna_1 != kolumna_2)
             cout << "Operacja niewykonalna\n";
-            else
+            else // tworze matryce
             {
-                int matryca_1[wiersz_1][kolumna_1];
-                int matryca_2[wiersz_2][kolumna_2];
+                int **matryca_1 = new int*[wiersz_1];
+                for (int i = 0; i < wiersz_1; i++)
+                    matryca_1[i] = new int[kolumna_1];
+                
+                int **matryca_2 = new int*[wiersz_2];
+                for (int i = 0; i < wiersz_2; i++)
+                    matryca_2[i] = new int[kolumna_2];
+
                 // wczytuje 1 matryce
                 cout << "Podaj 1 matryce:\n";
                 for (int i = 0; i < wiersz_1; i++)
@@ -89,6 +95,7 @@ void wczytaj_dane(int operacja)
                     for (int j = 0; j < kolumna_2; j++)
                     cin >> matryca_2[i][j];
                 }
+                // wykonuje operacje i wyswietlam wynik
                 cout << "\nWynik:\n";
                 if (operacja == 1) dodaj(matryca_1, matryca_2);
                 else dodaj(matryca_1, matryca_2);
