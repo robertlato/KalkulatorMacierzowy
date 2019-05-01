@@ -1,4 +1,4 @@
-#include <obliczenia.h>
+#include "obliczenia.h"
 #include <iostream>
 
 void dodaj(int **matryca_1, int **matryca_2, 

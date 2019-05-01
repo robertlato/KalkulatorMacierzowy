@@ -7,7 +7,7 @@
 */
 
 #include <iostream>
-#include <obliczenia.h>
+#include "obliczenia.h"
 
 using namespace std;
 
