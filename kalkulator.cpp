@@ -13,7 +13,7 @@ using namespace std;
 //*****************************************************************************
 //****** deklaracje funkcji ******//
 
-void wczytaj_dane(int i);
+void wczytaj_dane(int operacja);
 
 //*****************************************************************************
 //****** glowny program ********// 
@@ -57,16 +57,17 @@ int main()
 //*****************************************************************************
 //****** definicje funkcji ********// 
 
-void wczytaj_dane(int i)
+void wczytaj_dane(int operacja)
 {
     int wiersz_1, wiersz_2, kolumna_1, kolumna_2;
-    if (i)
+    if (operacja)
     {
         cout << "Rozmiar 1 matrycy: ";
         cin >> wiersz_1 >> kolumna_1;
         cout << "\nRozmiar 2 matrycy: ";
         cin >> wiersz_2 >> kolumna_2;
-        if (i == 1 || i == 2)
+        // w przypadku dodawania i odejmowania
+        if (operacja == 1 || operacja == 2)
         {
             if (wiersz_1 != wiersz_2 || kolumna_1 != kolumna_2)
             cout << "Operacja niewykonalna\n";
@@ -88,6 +89,9 @@ void wczytaj_dane(int i)
                     for (int j = 0; j < kolumna_2; j++)
                     cin >> matryca_2[i][j];
                 }
+                cout << "\nWynik:\n";
+                if (operacja == 1) dodaj(matryca_1, matryca_2);
+                else dodaj(matryca_1, matryca_2);
             }
         }
     }
