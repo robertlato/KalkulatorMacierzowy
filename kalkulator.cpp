@@ -70,6 +70,25 @@ void wczytaj_dane(int i)
         {
             if (wiersz_1 != wiersz_2 || kolumna_1 != kolumna_2)
             cout << "Operacja niewykonalna\n";
+            else
+            {
+                int matryca_1[wiersz_1][kolumna_1];
+                int matryca_2[wiersz_2][kolumna_2];
+                // wczytuje 1 matryce
+                cout << "Podaj 1 matryce:\n";
+                for (int i = 0; i < wiersz_1; i++)
+                {
+                    for (int j = 0; j < kolumna_1; j++)
+                    cin >> matryca_1[i][j];
+                }
+                // wczytuje 2 matryce
+                cout << "Podaj 2 matryce:\n";
+                for (int i = 0; i < wiersz_2; i++)
+                {
+                    for (int j = 0; j < kolumna_2; j++)
+                    cin >> matryca_2[i][j];
+                }
+            }
         }
     }
 }
