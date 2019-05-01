@@ -7,6 +7,7 @@
 */
 
 #include <iostream>
+#include <obliczenia.h>
 
 using namespace std;
 
@@ -71,12 +72,16 @@ void wczytaj_dane(int operacja)
         {
             if (wiersz_1 != wiersz_2 || kolumna_1 != kolumna_2)
             cout << "Operacja niewykonalna\n";
-            else // tworze matryce
+            else
             {
+                // tworze matryce 1
+
                 int **matryca_1 = new int*[wiersz_1];
                 for (int i = 0; i < wiersz_1; i++)
                     matryca_1[i] = new int[kolumna_1];
                 
+                // tworze matryce 2
+
                 int **matryca_2 = new int*[wiersz_2];
                 for (int i = 0; i < wiersz_2; i++)
                     matryca_2[i] = new int[kolumna_2];
@@ -97,8 +102,8 @@ void wczytaj_dane(int operacja)
                 }
                 // wykonuje operacje i wyswietlam wynik
                 cout << "\nWynik:\n";
-                if (operacja == 1) dodaj(matryca_1, matryca_2);
-                else dodaj(matryca_1, matryca_2);
+                if (operacja == 1) dodaj(matryca_1, matryca_2, wiersz_1, kolumna_1);
+                else dodaj(matryca_1, matryca_2, wiersz_1, kolumna_1);
             }
         }
     }
