@@ -37,7 +37,7 @@ int main()
             wczytaj_dane(operacja);
             break;
         case 2:     //odejmowanie
-            cout << "przypadek 2\n";
+            wczytaj_dane(operacja);
             break;
         case 3:     //mnozenie
             cout << "przypadek 3\n";
@@ -103,7 +103,7 @@ void wczytaj_dane(int operacja)
                 // wykonuje operacje i wyswietlam wynik
                 cout << "\nWynik:\n";
                 if (operacja == 1) dodaj(matryca_1, matryca_2, wiersz_1, kolumna_1);
-                else dodaj(matryca_1, matryca_2, wiersz_1, kolumna_1);
+                else odejmij(matryca_1, matryca_2, wiersz_1, kolumna_1);
             }
         }
     }
