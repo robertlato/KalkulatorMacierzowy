@@ -114,6 +114,16 @@ void wczytaj_dane(int operacja)
                 odejmij(matryca_1, matryca_2, wiersz_1, kolumna_1);
             else
                 mnoz(matryca_1, matryca_2, wiersz_1, kolumna_1, kolumna_2);
+
+            // usuwam matryce 1
+            for (int i = 0; i < wiersz_1; i++)
+                delete[] matryca_1[i];
+            delete[] matryca_1;
+
+            // usuwam matryce 2
+            for (int i = 0; i < wiersz_2; i++)
+                delete[] matryca_2[i];
+            delete[] matryca_2;
         }
     }
 
@@ -146,5 +156,10 @@ void wczytaj_dane(int operacja)
 
         cout << "\nWynik:\n";
         mnoz_l(matryca_1, liczba, wiersz_1, kolumna_1);
+
+            // usuwam matryce 1
+            for (int i = 0; i < wiersz_1; i++)
+                delete[] matryca_1[i];
+            delete[] matryca_1;
     }
 }
