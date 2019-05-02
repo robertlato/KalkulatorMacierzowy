@@ -26,3 +26,16 @@ void odejmij(int **matryca_1, int **matryca_2,
         std::cout << "\n";
     }
 }
+
+void mnoz_l(int **matryca_1, int liczba, 
+            int rozmiar_wiersza, int rozmiar_kolumny)
+{
+    for (int i = 0; i < rozmiar_wiersza; i++)
+    {
+        for (int j = 0; j < rozmiar_kolumny; j++)
+        {
+            std::cout << matryca_1[i][j] * liczba << " ";
+        }
+        std::cout << "\n";
+    }
+}

@@ -43,7 +43,7 @@ int main()
             cout << "przypadek 3\n";
             break;
         case 4:     //mnozenie przez liczbe
-            cout << "przypadek 4\n";
+            wczytaj_dane(0);
             break;
         case 5:     //wyjscie
             cout << "przypadek 5\n";
@@ -60,9 +60,10 @@ int main()
 
 void wczytaj_dane(int operacja)
 {
-    int wiersz_1, wiersz_2, kolumna_1, kolumna_2;
+    int wiersz_1, kolumna_1;
     if (operacja)
     {
+        int wiersz_2, kolumna_2;
         cout << "Rozmiar 1 matrycy: ";
         cin >> wiersz_1 >> kolumna_1;
         cout << "Rozmiar 2 matrycy: ";
@@ -106,5 +107,39 @@ void wczytaj_dane(int operacja)
                 else odejmij(matryca_1, matryca_2, wiersz_1, kolumna_1);
             }
         }
+        // w przypadku mnozenia
+        else
+        {
+            cout << "mnozenie 2 macierzy\n";
+        }        
+    }
+    // w przypadku mnozenia przez liczbe
+    else
+    {
+        int liczba;
+        cout << "Rozmiar matrycy: ";
+        cin >> wiersz_1 >> kolumna_1;
+        cout << "Liczba: ";
+        cin >> liczba;
+
+        // tworze matryce
+
+        int **matryca_1 = new int*[wiersz_1];
+        for (int i = 0; i < wiersz_1; i++)
+            matryca_1[i] = new int[kolumna_1];
+
+        // wczytuje 1 matryce
+
+        cout << "\nPodaj matryce:\n";
+        for (int i = 0; i < wiersz_1; i++)
+        {
+            for (int j = 0; j < kolumna_1; j++)
+            cin >> matryca_1[i][j];
+        }
+
+        // wykonuje operacje i wyswietlam wynik
+
+        cout << "\nWynik:\n";
+        mnoz_l(matryca_1, liczba, wiersz_1, kolumna_1);
     }
 }
