@@ -22,6 +22,8 @@ void wczytaj_dane(int operacja);
 int main()
 {
     system("clear");
+    while (true)
+    {
     cout << "*** Kalkulator macierzowy ***\n\n";
     cout << "Wybierz operacje:\n"
             "1. Dodawanie\n"
@@ -46,11 +48,11 @@ int main()
             wczytaj_dane(0);
             break;
         case 5:     //wyjscie
-            cout << "przypadek 5\n";
-            break;
+            return 0;
         default:
             cout << "Bledne dane, koncze program\n";
             return 0;
+    }
     }
     return 0;
 }
