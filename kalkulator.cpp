@@ -24,37 +24,36 @@ int main()
     system("clear");
     while (true)
     {
-    cout << "*** Kalkulator macierzowy ***\n\n";
-    cout << "Wybierz operacje:\n"
-            "1. Dodawanie\n"
-            "2. Odejmowanie\n"
-            "3. Mnozenie\n"
-            "4. Mnozenie przez liczbe\n"
-            "5. Wyjscie\n";
-    int operacja;
-    cin >> operacja;
-    switch (operacja)
-    {
-        case 1:     //dodawanie
-            wczytaj_dane(operacja);
-            break;
-        case 2:     //odejmowanie
-            wczytaj_dane(operacja);
-            break;
-        case 3:     //mnozenie
-            wczytaj_dane(operacja);
-            break;
-        case 4:     //mnozenie przez liczbe
-            wczytaj_dane(0);
-            break;
-        case 5:     //wyjscie
-            return 0;
-        default:
-            cout << "Bledne dane, koncze program\n";
-            return 0;
+        cout << "*** Kalkulator macierzowy ***\n\n";
+        cout << "Wybierz operacje:\n"
+                "1. Dodawanie\n"
+                "2. Odejmowanie\n"
+                "3. Mnozenie\n"
+                "4. Mnozenie przez liczbe\n"
+                "5. Wyjscie\n";
+        int operacja;
+        cin >> operacja;
+        switch (operacja)
+        {
+            case 1:     //dodawanie
+                wczytaj_dane(operacja);
+                break;
+            case 2:     //odejmowanie
+                wczytaj_dane(operacja);
+                break;
+            case 3:     //mnozenie
+                wczytaj_dane(operacja);
+                break;
+            case 4:     //mnozenie przez liczbe
+                wczytaj_dane(0);
+                break;
+            case 5:     //wyjscie
+                return 0;
+            default:
+                cout << "Bledne dane, koncze program\n";
+                return 0;
+        }
     }
-    }
-    return 0;
 }
 
 //*****************************************************************************
