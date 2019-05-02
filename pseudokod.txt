@@ -1,0 +1,100 @@
+Kalkulator macierzowy (pseudokod)
+ 
+Kalkulator.cpp:
+ 
+Funkcja main:
+While(true)
+    Wypisz menu kalkulatora
+    Wczytaj wybraną operację
+    Case bazujący na wybranej operacji
+        1: wczytaj dane dla dodawania
+        2: wczytaj dane dla odejmowania
+        3: wczytaj dane dla mnożenia
+        4: wczytaj dane dla mnożenia przez liczbę
+        5: zakończ program
+        Default:
+            wypisz „Blednę dane, kończę program”
+            zakończ program
+ 
+Funkcja wczytaj dane:
+If (wybrana operacja to dodawanie, odejmowanie lub mnożenie)
+    Wczytaj rozmiar dwóch matryc
+    If ((wybrana operacja to dodawanie lub odejmowanie) oraz rozmiary matryc są różne)
+        Przerwij działanie
+        Wróć do menu kalkulatora
+    Else if (wybrana operacja to mnożenie i liczba kolumn 1 matrycy != liczba wierszy 1 matrycy)
+        Przerwij działanie
+        Wróć do menu kalkulatora
+    Else
+        Utwórz matryce 1 i 2
+        Wczytaj dane do matrycy 1 i 2
+        Wykonaj operacje
+        Wyświetl wynik
+Else (wybrana operacja to mnożenie przez liczbę)
+    Wczytaj rozmiar tablicy
+    Wczytaj liczbę
+    Utwórz matryce
+    Wczytaj dane do matrycy
+    Wykonaj operacje
+    Wyświetl wynik
+              
+ 
+Obliczenia.cpp
+ 
+Funkcja dodaj:
+i = 0
+while (i < liczba wierszy matryc)
+    j = 0
+    while (j < liczba kolumn matryc)
+        Wypisz matryca1[i][j] + matryca2[i][j]
+        Wypisz przestrzeń
+        j = j + 1
+    endwhile
+    Wypisz znak następnej linii
+    i = i + 1
+endwhile
+
+Funkcja odejmij:
+i = 0
+while (i < liczba wierszy matryc)
+    j = 0
+    while (j < liczba kolumn matryc)
+        Wypisz matryca1[i][j] - matryca2[i][j]
+        Wypisz przestrzeń
+        j = j + 1
+    endwhile
+    Wypisz znak następnej linii
+    i = i + 1
+endwhile
+ 
+Funkcja mnóż:
+i = 0
+while (i < liczba wierszy matrycy1)
+    j = 0
+    while (j < liczba kolumn matrycy2)
+        k = 0
+        wynik = 0
+        while (k < liczba kolumn matrycy1)
+            wynik = wynik + (matryca1[i][k] * matryca2[k][j])
+            k = k + 1
+        endwhile
+        wypisz wynik
+        wypisz przestrzen
+        j = j + 1
+    endwhile
+    Wypisz znak następnej linii
+    i = i + 1
+endwhile
+ 
+Funkcja mnóż przez liczbę:
+i = 0
+while (i < liczba wierszy matrycy)
+    j = 0
+    while (j < liczba kolumn matrycy)
+        Wypisz matryca1[i][j] * liczba
+        Wypisz przestrzeń
+        j = j + 1
+    endwhile
+    Wypisz znak następnej linii
+    i = i + 1
+endwhile
