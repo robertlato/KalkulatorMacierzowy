@@ -43,6 +43,7 @@ void mnoz(int **matryca_1, int **matryca_2,
     }
 }
 
+// mnozy matryce przez liczbe
 
 void mnoz_l(int **matryca_1, int liczba, 
             int rozmiar_wiersza, int rozmiar_kolumny)
