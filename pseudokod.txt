@@ -30,6 +30,7 @@ If (wybrana operacja to dodawanie, odejmowanie lub mnożenie)
         Wczytaj dane do matrycy 1 i 2
         Wykonaj operacje
         Wyświetl wynik
+        Zwolnij pamiec (usun matryce)
 Else (wybrana operacja to mnożenie przez liczbę)
     Wczytaj rozmiar tablicy
     Wczytaj liczbę
@@ -37,6 +38,8 @@ Else (wybrana operacja to mnożenie przez liczbę)
     Wczytaj dane do matrycy
     Wykonaj operacje
     Wyświetl wynik
+    Zwolnij pamiec (usun matryce)
+
               
  
 Obliczenia.cpp
