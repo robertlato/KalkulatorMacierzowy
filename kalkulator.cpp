@@ -40,7 +40,7 @@ int main()
             wczytaj_dane(operacja);
             break;
         case 3:     //mnozenie
-            cout << "przypadek 3\n";
+            wczytaj_dane(operacja);
             break;
         case 4:     //mnozenie przez liczbe
             wczytaj_dane(0);
@@ -61,6 +61,9 @@ int main()
 void wczytaj_dane(int operacja)
 {
     int wiersz_1, kolumna_1;
+
+    // w przypadku dodawania, odejmowania i mnozenia
+
     if (operacja)
     {
         int wiersz_2, kolumna_2;
@@ -68,52 +71,53 @@ void wczytaj_dane(int operacja)
         cin >> wiersz_1 >> kolumna_1;
         cout << "Rozmiar 2 matrycy: ";
         cin >> wiersz_2 >> kolumna_2;
-        // w przypadku dodawania i odejmowania
-        if (operacja == 1 || operacja == 2)
-        {
-            if (wiersz_1 != wiersz_2 || kolumna_1 != kolumna_2)
+
+        if ((operacja == 1 || operacja == 2) &&
+            (wiersz_1 != wiersz_2 || kolumna_1 != kolumna_2))
             cout << "\nOperacja niewykonalna\n";
-            else
-            {
-                // tworze matryce 1
-
-                int **matryca_1 = new int*[wiersz_1];
-                for (int i = 0; i < wiersz_1; i++)
-                    matryca_1[i] = new int[kolumna_1];
-                
-                // tworze matryce 2
-
-                int **matryca_2 = new int*[wiersz_2];
-                for (int i = 0; i < wiersz_2; i++)
-                    matryca_2[i] = new int[kolumna_2];
-
-                // wczytuje 1 matryce
-                cout << "\nPodaj 1 matryce:\n";
-                for (int i = 0; i < wiersz_1; i++)
-                {
-                    for (int j = 0; j < kolumna_1; j++)
-                    cin >> matryca_1[i][j];
-                }
-                // wczytuje 2 matryce
-                cout << "\nPodaj 2 matryce:\n";
-                for (int i = 0; i < wiersz_2; i++)
-                {
-                    for (int j = 0; j < kolumna_2; j++)
-                    cin >> matryca_2[i][j];
-                }
-                // wykonuje operacje i wyswietlam wynik
-                cout << "\nWynik:\n";
-                if (operacja == 1) dodaj(matryca_1, matryca_2, wiersz_1, kolumna_1);
-                else odejmij(matryca_1, matryca_2, wiersz_1, kolumna_1);
-            }
-        }
-        // w przypadku mnozenia
+        else if ((operacja == 3) && (kolumna_1 != wiersz_2))
+            cout << "\nOperacja niewykonalna\n";
         else
         {
-            cout << "mnozenie 2 macierzy\n";
-        }        
+            // tworze matryce 1
+
+            int **matryca_1 = new int*[wiersz_1];
+            for (int i = 0; i < wiersz_1; i++)
+                matryca_1[i] = new int[kolumna_1];
+            
+            // tworze matryce 2
+
+            int **matryca_2 = new int*[wiersz_2];
+            for (int i = 0; i < wiersz_2; i++)
+                matryca_2[i] = new int[kolumna_2];
+
+            // wczytuje 1 matryce
+            cout << "\nPodaj 1 matryce:\n";
+            for (int i = 0; i < wiersz_1; i++)
+            {
+                for (int j = 0; j < kolumna_1; j++)
+                cin >> matryca_1[i][j];
+            }
+            // wczytuje 2 matryce
+            cout << "\nPodaj 2 matryce:\n";
+            for (int i = 0; i < wiersz_2; i++)
+            {
+                for (int j = 0; j < kolumna_2; j++)
+                cin >> matryca_2[i][j];
+            }
+            // wykonuje operacje i wyswietlam wynik
+            cout << "\nWynik:\n";
+            if (operacja == 1) 
+                dodaj(matryca_1, matryca_2, wiersz_1, kolumna_1);
+            else if (operacja == 2) 
+                odejmij(matryca_1, matryca_2, wiersz_1, kolumna_1);
+            else
+                mnoz(matryca_1, matryca_2, wiersz_1, kolumna_1, kolumna_2);
+        }
     }
+
     // w przypadku mnozenia przez liczbe
+
     else
     {
         int liczba;
