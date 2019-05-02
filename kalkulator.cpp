@@ -157,9 +157,9 @@ void wczytaj_dane(int operacja)
         cout << "\nWynik:\n";
         mnoz_l(matryca_1, liczba, wiersz_1, kolumna_1);
 
-            // usuwam matryce 1
-            for (int i = 0; i < wiersz_1; i++)
-                delete[] matryca_1[i];
-            delete[] matryca_1;
+        // usuwam matryce
+        for (int i = 0; i < wiersz_1; i++)
+            delete[] matryca_1[i];
+        delete[] matryca_1;
     }
 }
