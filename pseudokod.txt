@@ -15,7 +15,9 @@ While(true)
         Default:
             wypisz „Blednę dane, kończę program”
             zakończ program
- 
+endwhile
+
+
 Funkcja wczytaj dane:
 If (wybrana operacja to dodawanie, odejmowanie lub mnożenie)
     Wczytaj rozmiar dwóch matryc
